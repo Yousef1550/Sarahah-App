@@ -1,81 +1,67 @@
-🚀 Sarahah App Backend
+# Sarahah App Backend
 
-This project is the backend component of the Sarahah App, a platform that allows users to send and receive anonymous messages. The backend is built using Node.js and Express, with MongoDB as the database.
+This is the backend component of the **Sarahah App**, a platform that allows users to send and receive anonymous messages. The backend is developed using **Node.js**, **Express.js**, and **MongoDB** to ensure secure, fast, and scalable communication.
 
-🌟 Features
+## 🚀 Features
 
-🔐 User Authentication: Secure user registration and login functionalities using JWT (JSON Web Tokens) for session management.
+- **User Authentication:** Secure registration and login using **JWT (JSON Web Tokens)**.
+- **Authorization:** Role-based access control for protected routes.
+- **Password Hashing:** Strong password encryption using **bcrypt**.
+- **Input Validation:** Robust validation with **Joi** to ensure data integrity.
+- **Anonymous Messaging:** Send and receive messages anonymously.
+- **Profile Management:** Update profile details securely.
+- **Message Management:** View and delete received messages.
 
-🛡️ Password Hashing: User passwords are securely hashed using bcrypt to ensure data protection.
+## ⚙️ Technologies Used
 
-✅ Input Validation: All user inputs are validated using Joi to maintain data integrity and prevent malicious data entry.
+- **Node.js & Express.js:** Backend framework for building the server.
+- **MongoDB & Mongoose:** NoSQL database for data storage.
+- **JWT:** Secure token-based authentication.
+- **bcrypt:** Password hashing for enhanced security.
+- **Joi:** Schema-based input validation.
 
-🔑 Authorization: Protected routes are accessible only to authenticated users, ensuring secure access control.
+## 📋 Prerequisites
 
-💬 Anonymous Messaging: Users can send and receive messages without revealing their identity.
+Ensure the following are installed on your machine:
 
-👤 Profile Management: Users can update their profile information, including username and password.
+- **Node.js** (Download from [here](https://nodejs.org/))
+- **npm (Node Package Manager)** (comes with Node.js)
+- **MongoDB** (locally or via [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
 
-📥 Message Management: Users can view and delete received messages.
+Verify installations:
 
-⚙️ Prerequisites
-
-Before setting up the project, ensure your system has the following:
-
-📦 Node.js: Install the latest stable version from the official website.
-
-📥 npm (Node Package Manager): Typically bundled with Node.js. Verify its installation by running:
-
+```bash
+node -v
 npm -v
+```
 
-🗃️ MongoDB: Set up a MongoDB database, either locally or through a cloud service like MongoDB Atlas.
 
-🔐 Environment Variables: Configure the necessary environment variables, such as database connection strings and authentication secrets. It's advisable to store these in a .env file in your project's root directory.
+## 🔐 Configuration
 
-🚀 Installation
+1. **Create a `.env` File:**
 
-Clone the repository:
+   ```bash
+   touch .env
+   ```
 
-git clone https://github.com/Yousef1550/Sarahah-App.git
+2. **Add Environment Variables:**
 
-Navigate to the backend directory:
+   ```env
+   PORT=3000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
 
-cd Sarahah-App/backend
+Replace `your_mongodb_connection_string` and `your_jwt_secret` with your actual credentials.
 
-Install dependencies:
+## 🏃 Running the Application
 
-npm install
+To start the server:
 
-⚡ Configuration
-
-Environment Variables: Create a .env file in the backend directory and add the following variables:
-
-PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-
-Replace your_mongodb_connection_string with your actual MongoDB URI and your_jwt_secret with a secure secret key for JWT.
-
-🏃‍♂️ Running the Application
-
-Start the server:
-
+```bash
 npm start
+```
 
-The server will run on the port specified in the .env file (default is 3000).
+The server will run on `http://localhost:3000` (or the port specified in `.env`).
 
-📡 API Endpoints
 
-User Registration: POST /api/users/register
-
-User Login: POST /api/users/login
-
-Send Anonymous Message: POST /api/messages/send
-
-Get Received Messages: GET /api/messages/received
-
-Delete Message: DELETE /api/messages/:id
-
-🤝 Contributing
-
-We welcome contributions from the community. If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
